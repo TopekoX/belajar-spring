@@ -4,9 +4,6 @@ import com.github.topekox.belajar.dao.ProdukDao;
 import com.github.topekox.belajar.entity.Produk;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
@@ -46,7 +43,8 @@ public class ManualDI
         System.out.println("Nama Produk : " + p.getNama());
         System.out.println("Harga Produk : " + p.getHarga());
         
-        ProdukDao pd = new ProdukDao(connectionToDB());
+        ProdukDao pd = new ProdukDao();
+        pd.setDs(connectionToDB());
         pd.simpan(p);
     }
 }

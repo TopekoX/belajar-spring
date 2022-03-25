@@ -1,9 +1,0 @@
-package com.github.topekox.belajar;
-
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
-}

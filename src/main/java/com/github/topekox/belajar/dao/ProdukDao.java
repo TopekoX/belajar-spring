@@ -1,41 +1,35 @@
 package com.github.topekox.belajar.dao;
 
 import com.github.topekox.belajar.entity.Produk;
-import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sql.DataSource;
 
 public class ProdukDao {
     
     private static final String SQL_SIMPAN = "insert into produk (kode, nama, harga) values (?, ?, ?)";
+    private DataSource ds;
+
+    // Constructor Injection
+//    public ProdukDao(DataSource c) {
+//        this.ds = c;
+//    }
     
-    private final String dbDriver = "com.mysql.jdbc.Driver";
-    private final String dbUrl = "jdbc:mysql://localhost/belajar_spring";
-    private final String dbUser = "ucup";
-    private final String dbPassword = "123456";
-    
-    private Connection connectionToDB() {
-        try {
-            Class.forName(dbDriver);
-            Connection c = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-            return c;
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+    // Setter Injection
+    public void setDs(DataSource ds) {
+        this.ds = ds;
     }
     
     public void simpan(Produk p) {
-        Connection c = connectionToDB();
-        try {
+        Connection c = null;
+        try {         
+            
+            c = ds.getConnection();
             
             c.setAutoCommit(false);
             PreparedStatement ps = c.prepareStatement(SQL_SIMPAN);
@@ -51,13 +45,7 @@ public class ProdukDao {
                 Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex1);
             }
             Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }       
+        }   
         
     }
     
