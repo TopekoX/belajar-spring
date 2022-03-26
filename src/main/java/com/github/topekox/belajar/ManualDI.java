@@ -44,7 +44,7 @@ public class ManualDI
         System.out.println("Harga Produk : " + p.getHarga());
         
         ProdukDao pd = new ProdukDao();
-        pd.setDs(connectionToDB());
+        pd.setDataSourceKeDatabase(connectionToDB());
         pd.simpan(p);
     }
 }

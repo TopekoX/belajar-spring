@@ -6,8 +6,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="p" class="com.github.topekox.belajar.entity.Produk">
-        <property name="kode" value="P-006"/>
-        <property name="nama" value="Produk 006"/>
+        <property name="kode" value="P-001"/>
+        <property name="nama" value="Produk 001"/>
         <property name="harga" value="162000.50"/>
     </bean>
     
@@ -19,6 +19,6 @@
     
     <bean id="pd" class="com.github.topekox.belajar.dao.ProdukDao">
         <!--<constructor-arg ref="ds"/> via constructor-->
-        <property name="ds" ref="ds"/>
+        <property name="dataSourceKeDatabase" ref="ds"/><!--name harus sama dengan nama method setter di class ProdukDao-->
     </bean>
 </beans>
