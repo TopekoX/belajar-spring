@@ -5,7 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config /><!-- //aktifkan autowired -->
+    <!--<context:annotation-config /> //aktifkan autowired -->
+    <context:component-scan base-package="com.github.topekox.belajar.dao" />
     
     <bean id="p" class="com.github.topekox.belajar.entity.Produk">
         <property name="kode" value="P-001"/>
@@ -25,8 +26,9 @@
         <property name="password" value="123456"/>        
     </bean>
     
+<!-- Disable karena sudah ada @Repository    
     <bean id="pd" class="com.github.topekox.belajar.dao.ProdukDao">
-        <!--<constructor-arg ref="ds"/> via constructor-->
-        <!--<property name="dataSourceKeDatabase" ref="ds"/>name harus sama dengan nama method setter di class ProdukDao-->
-    </bean>
+        <constructor-arg ref="ds"/> via constructor
+        <property name="dataSourceKeDatabase" ref="ds"/>name harus sama dengan nama method setter di class ProdukDao
+    </bean>-->
 </beans>
