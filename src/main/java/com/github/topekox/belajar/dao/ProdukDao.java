@@ -21,7 +21,7 @@ public class ProdukDao {
 //    }
     
     // Setter Injection
-    public void setDs(DataSource ds) {
+    public void setDataSourceKeDatabase(DataSource ds) {
         this.ds = ds;
     }
     
