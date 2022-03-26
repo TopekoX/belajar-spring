@@ -1,7 +1,8 @@
 package com.github.topekox.belajar;
 
 import com.github.topekox.belajar.dao.ProdukDao;
-import com.github.topekox.belajar.entity.Produk;import org.springframework.context.support.AbstractApplicationContext;
+import com.github.topekox.belajar.entity.Produk;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringDepedencyInjection {
