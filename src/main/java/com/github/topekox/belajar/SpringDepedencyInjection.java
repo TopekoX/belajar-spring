@@ -21,7 +21,7 @@ public class SpringDepedencyInjection {
         System.out.println("Nama Produk : " + p.getNama());
         System.out.println("Harga Produk : " + p.getHarga());
         
-        ProdukDao pd = (ProdukDao) applicationContext.getBean("produkDao");
+        ProdukDao pd = (ProdukDao) applicationContext.getBean("pd");
         pd.simpan(p);
     }
 }
