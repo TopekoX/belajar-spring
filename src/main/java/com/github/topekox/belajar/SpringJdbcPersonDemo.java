@@ -13,7 +13,10 @@ public class SpringJdbcPersonDemo {
         p.setNama("Ucup");
         p.setAlamat("Palu");
         
-        PersonDao pd = (PersonDao) applicationContext.getBean("personDao");
+//        PersonDao pd = (PersonDao) applicationContext.getBean("personDao");
+        PersonDao pd = (PersonDao) applicationContext.getBean("personDaoSpring");
         pd.save(p);
+        
+        System.out.println("ID: " + p.getId());
     }
 }
