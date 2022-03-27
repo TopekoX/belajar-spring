@@ -20,13 +20,25 @@ public class ProdukDao {
     private DataSource ds;
 
     // Constructor Injection
-//    public ProdukDao(DataSource c) {
-//        this.ds = c;
-//    }
-    
+////    public ProdukDao(DataSource c) {
+////        this.ds = c;
+////    }
+//    
     // Setter Injection
-    @Autowired @Qualifier(value = "ds1")
-    public void setDataSourceKeDatabase(DataSource ds) {
+//    @Autowired @Qualifier(value = "ds1")
+//    public void setDataSourceKeDatabase(DataSource ds) {
+//        this.ds = ds;
+//    }
+//    
+
+    // Menggunakan konfigurasi aplikasi class
+//    public ProdukDao(DataSource ds) {
+//        this.ds = ds;
+//    }
+//    
+    
+    @Autowired
+    public void setDataSource(DataSource ds){
         this.ds = ds;
     }
     

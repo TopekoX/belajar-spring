@@ -44,7 +44,7 @@ public class ManualDepedencyInjection
         System.out.println("Harga Produk : " + p.getHarga());
         
         ProdukDao pd = new ProdukDao();
-        pd.setDataSourceKeDatabase(connectionToDB());
+      //  pd.setDataSourceKeDatabase(connectionToDB());
         pd.simpan(p);
     }
 }
