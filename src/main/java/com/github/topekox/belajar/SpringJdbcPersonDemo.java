@@ -17,6 +17,11 @@ public class SpringJdbcPersonDemo {
         PersonDao pd = (PersonDao) applicationContext.getBean("personDaoSpring");
         pd.save(p);
         
-        System.out.println("ID: " + p.getId());
+        System.out.println("Berhasil Insert Data dengan ID: " + p.getId());
+        
+        Person px = pd.findPersonById(1);
+        System.out.println("ID: " + px.getId());
+        System.out.println("Nama: " + px.getNama());
+        System.out.println("Alamat: " + px.getAlamat());
     }
 }
