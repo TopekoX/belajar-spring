@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="p" class="com.github.topekox.model.Produk">
+        <property name="kode" value="P-012"/>
+        <property name="nama" value="Produk 012"/>
+        <property name="harga" value="124000.94"/>        
+    </bean>
+    
+    <bean id="ds" class="com.mysql.cj.jdbc.MysqlDataSource">
+        <property name="url" value="jdbc:mysql://localhost/belajar_spring"/>
+        <property name="user" value="root"/>
+        <property name="password" value=""/>
+    </bean>
+    
+    <bean id="pd" class="com.github.topekox.dao.ProdukDao">
+        <!--<constructor-arg ref="ds"/>--> 
+        <property name="dS" ref="ds"/>
+    </bean>
+</beans>

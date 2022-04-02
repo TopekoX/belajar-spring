@@ -1,0 +1,6 @@
+CREATE TABLE produk (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    kode VARCHAR(255) NOT NULL UNIQUE,
+    nama VARCHAR(255) NOT NULL,
+    harga DECIMAL NOT NULL
+) Engine=InnoDB;
