@@ -27,5 +27,11 @@
 		<!-- set constructor injection -->
 		<constructor-arg ref="jadwal" />
 	</bean>
+	
+	<bean id="citraMahasiswa" class="com.tutorialtimposu.spring.belajar.CitraMahasiswa">
+		
+		<!-- set up setter injection -->
+		<property name="jadwalService" ref="jadwal"/>
+	</bean>
 
 </beans>
