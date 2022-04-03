@@ -10,7 +10,7 @@ import com.topekox.spring.belajar.log.MyLoggerConfigAnnotation;
 
 @Configuration
 //@ComponentScan("com.topekox.spring.belajar")
-@PropertySource("classpath:mylogger.properties")
+@PropertySource({"classpath:mylogger.properties", "classpath:file.properties"})
 public class AplikasiConfig {
 
 	@Bean

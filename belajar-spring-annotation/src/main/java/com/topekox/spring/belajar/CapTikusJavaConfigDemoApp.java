@@ -11,13 +11,13 @@ public class CapTikusJavaConfigDemoApp {
 				new AnnotationConfigApplicationContext(AplikasiConfig.class);
 
 		// mengambil bean dari spring containner
-		Makanan makanan = context.getBean("nasiKuning", Makanan.class);
+		NasiKuning makanan = context.getBean("nasiKuning", NasiKuning.class);
 
 		// memanggil method dalam bean
-		System.out.println(makanan.getMakan());
+		System.out.println(makanan.getMakan() + " " + makanan.getPorsi());
 
 		// memanggil method minuman
-		System.out.println(makanan.getMinuman());
+		System.out.println(makanan.getMinuman() + " " + makanan.getValue());
 
 		// close context
 		context.close();
