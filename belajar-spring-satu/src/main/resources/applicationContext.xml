@@ -6,9 +6,20 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    
-    <!-- mendefinisikan beans -->
-    <bean id = "mahasiswa" class ="com.tutorialtimposu.spring.belajar.BudiMahasiswa" >
-    </bean>
+
+	<!-- Membuat Logging -->
+	<!-- Secara default spring 5 tidak terdapat logger jadi kita bisa membuat 
+		secara manual -->
+	<bean id="myLogger"
+		class="com.tutorialtimposu.spring.belajar.MyLogger"
+		init-method="initLogger">
+		<property name="rootLoggerLevel" value="FINE" />
+		<property name="printedLoggerLevel" value="FINE" />
+	</bean>
+
+	<!-- mendefinisikan beans -->
+	<bean id="mahasiswa"
+		class="com.tutorialtimposu.spring.belajar.BudiMahasiswa">
+	</bean>
 
 </beans>
