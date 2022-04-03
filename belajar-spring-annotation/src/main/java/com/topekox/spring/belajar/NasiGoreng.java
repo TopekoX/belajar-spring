@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class NasiGoreng implements Makanan {
 
+	// mendefinisikan field injection
+	@Autowired
 	private MinumanServices minumanServices;
 	
 	// mendefinisikan default constructor
@@ -28,11 +30,12 @@ public class NasiGoreng implements Makanan {
 		this.minumanServices = minumanServices;
 	}*/
 	
-	@Autowired
+	// mendefenisikan method injection
+	/*@Autowired
 	public void pesanMinuman(MinumanServices minumanServices) {
 		System.out.println(">> NasiGoreng: di dalam method pesanMinuman()");
 		this.minumanServices = minumanServices;
-	}
+	}*/
 
 	@Override
 	public String getMakan() {
