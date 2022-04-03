@@ -4,4 +4,6 @@ public interface Makanan {
 
 	public String getMakan();
 	
+	public String getMinuman();
+	
 }

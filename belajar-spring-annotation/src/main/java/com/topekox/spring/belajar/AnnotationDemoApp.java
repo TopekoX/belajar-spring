@@ -16,6 +16,9 @@ public class AnnotationDemoApp {
 		// memanggil method dalam bean
 		System.out.println(makanan.getMakan());
 		
+		// memanggil method minuman
+		System.out.println(makanan.getMinuman());
+		
 		// close context
 		context.close();
 	}
