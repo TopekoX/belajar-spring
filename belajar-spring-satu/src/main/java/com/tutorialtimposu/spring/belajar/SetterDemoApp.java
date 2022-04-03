@@ -17,6 +17,11 @@ public class SetterDemoApp {
 		
 		System.out.println(mahasiswa.getJadwalHarian());
 		
+		// memanggil method literal
+		System.out.println(mahasiswa.getEmail());
+		
+		System.out.println(mahasiswa.getAlamat());
+		
 		// close context
 		context.close();
 	}
