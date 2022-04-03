@@ -4,4 +4,6 @@ public interface Mahasiswa {
 	
 	public String getFakultas();
 	
+	public String getJadwalHarian();
+	
 }

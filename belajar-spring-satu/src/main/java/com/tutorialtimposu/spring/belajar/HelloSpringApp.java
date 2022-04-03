@@ -11,10 +11,13 @@ public class HelloSpringApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// memanggil bean dari spring container
-		Mahasiswa budi = context.getBean("mahasiswa", Mahasiswa.class);
+		Mahasiswa mahasiswa = context.getBean("mahasiswa", Mahasiswa.class);
 				
 		//  memamnggil method dari bean
-		System.out.println(budi.getFakultas());
+		System.out.println(mahasiswa.getFakultas());
+		
+		// memanggil method dari jadwal
+		System.out.println(mahasiswa.getJadwalHarian());
 		
 		// close application context
 		context.close();
