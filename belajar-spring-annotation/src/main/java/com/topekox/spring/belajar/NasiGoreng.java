@@ -22,9 +22,15 @@ public class NasiGoreng implements Makanan {
 	}*/
 	
 	// mendefinisikan setter injection
-	@Autowired
+	/*@Autowired
 	public void setMinumanServices(MinumanServices minumanServices) {
 		System.out.println(">> NasiGoreng: di dalam setMinumanService method");
+		this.minumanServices = minumanServices;
+	}*/
+	
+	@Autowired
+	public void pesanMinuman(MinumanServices minumanServices) {
+		System.out.println(">> NasiGoreng: di dalam method pesanMinuman()");
 		this.minumanServices = minumanServices;
 	}
 
