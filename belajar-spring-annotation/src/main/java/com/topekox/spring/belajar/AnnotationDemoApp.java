@@ -11,7 +11,7 @@ public class AnnotationDemoApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// mengambil bean dari spring containner
-		Makanan makanan = context.getBean("makanNasiGoreng", Makanan.class);
+		Makanan makanan = context.getBean("nasiGoreng", Makanan.class);
 		
 		// memanggil method dalam bean
 		System.out.println(makanan.getMakan());
