@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 public class NasiGoreng implements Makanan {
 
 	// mendefinisikan field injection
-	@Autowired
-	@Qualifier("randomMinumanServices")
+//	@Autowired
+//	@Qualifier("randomMinumanServices")
 	private MinumanServices minumanServices;
 	
 	// mendefinisikan default constructor
@@ -26,11 +26,11 @@ public class NasiGoreng implements Makanan {
 	}*/
 	
 	// mendefinisikan setter injection
-	/*@Autowired
-	public void setMinumanServices(MinumanServices minumanServices) {
+	@Autowired
+	public void setMinumanServices(@Qualifier("kopiServices") MinumanServices minumanServices) {
 		System.out.println(">> NasiGoreng: di dalam setMinumanService method");
 		this.minumanServices = minumanServices;
-	}*/
+	}
 	
 	// mendefenisikan method injection
 	/*@Autowired
