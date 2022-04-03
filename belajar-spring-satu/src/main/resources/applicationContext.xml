@@ -6,6 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- Load file properties -->
+    <context:property-placeholder location="mahasiswa.properties"/>
 
 	<!-- Membuat Logging -->
 	<!-- Secara default spring 5 tidak terdapat logger jadi kita bisa membuat 
@@ -34,8 +37,8 @@
 		<property name="jadwalService" ref="jadwal"/>
 		
 		<!-- set up literal values -->
-		<property name="email" value="citra@undek.ac.id"/>
-		<property name="alamat" value="Jl. Kunti Goyang Tiktok"></property>
+		<property name="email" value="${mahasiswa.email}"/>
+		<property name="alamat" value="${mahasiswa.alamat}"></property>
 	</bean>
 
 </beans>
