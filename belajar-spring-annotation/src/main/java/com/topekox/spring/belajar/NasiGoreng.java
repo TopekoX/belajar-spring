@@ -1,6 +1,7 @@
 package com.topekox.spring.belajar;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //@Component("makanNasiGoreng")
@@ -9,6 +10,7 @@ public class NasiGoreng implements Makanan {
 
 	// mendefinisikan field injection
 	@Autowired
+	@Qualifier("randomMinumanServices")
 	private MinumanServices minumanServices;
 	
 	// mendefinisikan default constructor
