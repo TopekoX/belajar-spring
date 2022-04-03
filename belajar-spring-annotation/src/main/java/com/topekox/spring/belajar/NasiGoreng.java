@@ -1,14 +1,16 @@
 package com.topekox.spring.belajar;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //@Component("makanNasiGoreng")
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class NasiGoreng implements Makanan {
 
 	// mendefinisikan field injection
@@ -47,6 +49,18 @@ public class NasiGoreng implements Makanan {
 		System.out.println(">> NasiGoreng: di dalam method pesanMinuman()");
 		this.minumanServices = minumanServices;
 	}*/
+	
+	// mendefinisikan init method
+	@PostConstruct
+	public void initMethod() {
+		System.out.println(">> NasiGoreng : menjalankan method initMethod()");
+	}
+	
+	// mendefinisikan destroy method
+	@PreDestroy
+	public void destroyMethod() {
+		System.out.println(">> NasiGoreng : menjalankan method destroyMethod()");
+	}
 
 	@Override
 	public String getMakan() {
