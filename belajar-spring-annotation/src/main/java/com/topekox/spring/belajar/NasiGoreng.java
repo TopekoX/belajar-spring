@@ -2,6 +2,7 @@ package com.topekox.spring.belajar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 //@Component("makanNasiGoreng")
@@ -12,6 +13,12 @@ public class NasiGoreng implements Makanan {
 //	@Autowired
 //	@Qualifier("randomMinumanServices")
 	private MinumanServices minumanServices;
+	
+	@Value("${foo.porsi}")
+	private String porsi;
+	
+	@Value("${foo.value}")
+	private String value;
 	
 	// mendefinisikan default constructor
 	public NasiGoreng() {
@@ -41,12 +48,12 @@ public class NasiGoreng implements Makanan {
 
 	@Override
 	public String getMakan() {
-		return "Sarapan hari ini Nasi Goreng";
+		return "Sarapan hari ini Nasi Goreng " + porsi;
 	}
 
 	@Override
 	public String getMinuman() {
-		return minumanServices.getMinum();
+		return minumanServices.getMinum() + " " + value;
 	}
 
 }
