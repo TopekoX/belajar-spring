@@ -21,5 +21,15 @@ public class BudiMahasiswa implements Mahasiswa {
 	public String getJadwalHarian() {
 		return jadwalService.getJadwal();
 	}
-
+	
+	// mendefinisikan init method
+	public void startUpMahasiswa() {
+		System.out.println("BudiMahasiswa: di dalam method startUpMahasiswa");
+	}
+	
+	// mendefinisikan destroy method
+	public void destroyMahasiswa() {
+		System.out.println("BudiMahasiswa: di dalam method destroyMahasiswa");
+	}
+	
 }
