@@ -9,8 +9,22 @@ public class NasiGoreng implements Makanan {
 
 	private MinumanServices minumanServices;
 	
+	// mendefinisikan default constructor
+	public NasiGoreng() {
+		System.out.println(">> NasiGoreng: di dalam default constructor");
+	}
+	
+	// mendifinisikan constructor injection
+	/*
 	@Autowired
 	public NasiGoreng(MinumanServices minumanServices) {
+		this.minumanServices = minumanServices;
+	}*/
+	
+	// mendefinisikan setter injection
+	@Autowired
+	public void setMinumanServices(MinumanServices minumanServices) {
+		System.out.println(">> NasiGoreng: di dalam setMinumanService method");
 		this.minumanServices = minumanServices;
 	}
 
