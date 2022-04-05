@@ -13,6 +13,8 @@ public class Student {
 	
 	private String favoriteLanguage;
 	
+	private String[] operatingSystem;
+	
 	public Student() {
 		
 		// used country by ISO country code
@@ -52,6 +54,12 @@ public class Student {
 	}
 	public void setFavoriteLanguage(String favoriteLanguage) {
 		this.favoriteLanguage = favoriteLanguage;
+	}
+	public String[] getOperatingSystem() {
+		return operatingSystem;
+	}
+	public void setOperatingSystem(String[] operatingSystem) {
+		this.operatingSystem = operatingSystem;
 	}
 		
 }

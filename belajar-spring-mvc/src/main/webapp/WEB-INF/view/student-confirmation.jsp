@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,15 @@ Country: ${student.country}
 <br> <br>
 
 Favorite Language: ${student.favoriteLanguage}
+
+<br> <br>
+
+Operating System: 
+<ul>
+	<c:forEach var="os" items="${student.operatingSystem}">
+		<li> ${os} </li>
+	</c:forEach>
+</ul>
 		
 </body>
 </html>
