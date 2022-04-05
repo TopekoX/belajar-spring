@@ -6,6 +6,7 @@
 	<packaging>war</packaging>
 	<properties>
 		<spring.version>5.3.18</spring.version>
+		<hibernate.version>6.2.3.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +39,11 @@
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>jstl-api</artifactId>
 			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 	</dependencies>
 
