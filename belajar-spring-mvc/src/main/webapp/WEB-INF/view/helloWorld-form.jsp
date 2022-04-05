@@ -7,7 +7,7 @@
 <title>Hello World - Input form</title>
 </head>
 <body>
-	<form action="processForm2" method="POST">
+	<form action="processForm3" method="POST">
 		<input type="text" name="studentName" placeholder="Siapa namamu?"/>
 		<input type="submit"/>
 	</form>
