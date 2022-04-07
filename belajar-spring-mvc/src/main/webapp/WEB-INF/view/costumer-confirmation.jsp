@@ -14,6 +14,10 @@
 	<br> <br>
 	
 	Tiket Gratis : ${costumer.tiketGratis}
+	
+	<br> <br>
+	
+	Nomor Resi : ${costumer.nomorResi}
 
 </body>
 </html>

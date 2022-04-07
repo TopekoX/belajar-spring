@@ -35,6 +35,11 @@
 	
 	<br> <br>
 	
+	Nomor Resi : <form:input path="nomorResi"/>
+	<form:errors path="nomorResi" cssClass="error" />
+	
+	<br> <br>
+	
 	<input type="submit" value="submit"/> 
 	
 </form:form>
