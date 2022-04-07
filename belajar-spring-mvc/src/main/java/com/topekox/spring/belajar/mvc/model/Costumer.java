@@ -14,9 +14,10 @@ public class Costumer {
 	@Size(min = 1, message = "is required")
 	private String lastName;
 
+	@NotNull(message = "is required")
 	@Min(value=0, message="nilai harus >= 0")
 	@Max(value=10, message = "nilai harus <= 10")
-	private int tiketGratis;
+	private Integer tiketGratis;
 	
 	@Pattern(regexp="[a-zA-Z0-9]{5}", message = "hanya 5 char/digit")
 	private String nomorResi;	
@@ -29,11 +30,11 @@ public class Costumer {
 		this.nomorResi = nomorResi;
 	}
 
-	public int getTiketGratis() {
+	public Integer getTiketGratis() {
 		return tiketGratis;
 	}
 
-	public void setTiketGratis(int tiketGratis) {
+	public void setTiketGratis(Integer tiketGratis) {
 		this.tiketGratis = tiketGratis;
 	}
 
