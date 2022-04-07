@@ -10,6 +10,10 @@
 <body>
 
 	The Costumer is confirmed : ${costumer.firstName} ${costumer.lastName}
+	
+	<br> <br>
+	
+	Tiket Gratis : ${costumer.tiketGratis}
 
 </body>
 </html>

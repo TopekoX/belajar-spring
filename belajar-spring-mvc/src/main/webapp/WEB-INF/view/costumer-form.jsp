@@ -30,6 +30,11 @@
 	
 	<br> <br>
 	
+	Jumlah Tiket Gratis : <form:input path="tiketGratis"/>
+	<form:errors path="tiketGratis" cssClass="error" />
+	
+	<br> <br>
+	
 	<input type="submit" value="submit"/> 
 	
 </form:form>
