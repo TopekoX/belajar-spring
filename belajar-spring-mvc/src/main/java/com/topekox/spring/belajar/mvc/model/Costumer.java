@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.topekox.spring.belajar.mvc.validation.CourseCode;
+
 public class Costumer {
 
 	private String firstName;
@@ -22,6 +24,17 @@ public class Costumer {
 	@Pattern(regexp="[a-zA-Z0-9]{5}", message = "hanya 5 char/digit")
 	private String nomorResi;	
 	
+	@CourseCode(value = "TES", message = "must start with TES")
+	private String courseCode;
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
 	public String getNomorResi() {
 		return nomorResi;
 	}

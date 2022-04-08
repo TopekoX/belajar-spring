@@ -18,6 +18,10 @@
 	<br> <br>
 	
 	Nomor Resi : ${costumer.nomorResi}
+	
+	<br> <br>
+	
+	Course Code : ${costumer.courseCode}
 
 </body>
 </html>
