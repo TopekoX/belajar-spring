@@ -16,6 +16,7 @@ public class TestJdbc {
 		try {
 			Connection con = DriverManager.getConnection(url, user, pass);
 			System.out.println("Connection Successfull");
+			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

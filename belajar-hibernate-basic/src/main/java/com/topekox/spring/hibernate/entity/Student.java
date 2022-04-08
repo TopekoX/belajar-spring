@@ -2,6 +2,8 @@ package com.topekox.spring.hibernate.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,6 +13,7 @@ public class Student {
 
 	@Id
 	@Column(name="id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(name="first_name")
@@ -22,8 +25,7 @@ public class Student {
 	@Column(name="email")
 	private String email;
 
-	public Student(Integer id, String firstName, String lastName, String email) {
-		this.id = id;
+	public Student(String firstName, String lastName, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
