@@ -6,3 +6,4 @@ List:
 * Spring Core Annotation
 * Spring Core Java Configuration
 * Spring MVC
+* Hibernate CRUD basic
