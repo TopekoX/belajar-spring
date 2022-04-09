@@ -7,3 +7,5 @@ List:
 * Spring Core Java Configuration
 * Spring MVC
 * Hibernate CRUD basic
+* Hibernate One-To-One
+* Hibernate One-To-One Bi-Directional
