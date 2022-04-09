@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.topekox.spring.hibernate.entity.Instructor;
 import com.topekox.spring.hibernate.entity.InstructorDetail;
 
-public class CreateStudentDemo {
+public class CreateDemo {
 
 	public static void main(String[] args) {
 
