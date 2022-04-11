@@ -10,7 +10,7 @@ import com.topekox.spring.hibernate.entity.InstructorDetail;
 import com.topekox.spring.hibernate.entity.Review;
 import com.topekox.spring.hibernate.entity.Student;
 
-public class AddeCourseForMaryDemo {
+public class AddCourseForMaryDemo {
 
 	public static void main(String[] args) {
 
