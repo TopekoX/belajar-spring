@@ -35,21 +35,8 @@ public class AddCourseForMaryDemo {
 			Student student = session.get(Student.class, id);
 			
 			System.out.println("\nLoaded student: " + student);
-			System.err.println("Courses: " + student.getCourses());
+			System.out.println("Courses: " + student.getCourses());
 			
-			// create more courses
-			Course course1 = new Course("Rubik's Cube - How to Speed Cube");
-			Course course2 = new Course("Atari 2600 - Game Development");
-			
-			// add student to course
-			course1.addStudent(student);
-			course2.addStudent(student);
-	
-			// save student to course
-			System.out.println("\nSaving the Course");
-			
-			session.save(course1);
-			session.save(course2);
 			
 			// commit transaction
 			session.getTransaction().commit();
