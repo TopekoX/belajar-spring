@@ -7,5 +7,7 @@ import com.tutorialtimposu.spring.entity.Customer;
 public interface CustomerService {
 	
 	public List<Customer> getCustumers();
+	
+	public void saveCustomer(Customer customer);
 
 }
