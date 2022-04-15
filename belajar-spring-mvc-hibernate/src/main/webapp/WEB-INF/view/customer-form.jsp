@@ -22,6 +22,10 @@
 </div>	
 
 	<form:form action="saveCustomer" modelAttribute="customer" method="POST">
+		
+		<!-- need rto assosiate this data costumer id -->
+		<form:hidden path="id"/>
+		
 		<table>
 			<tbody>
 				<tr>
