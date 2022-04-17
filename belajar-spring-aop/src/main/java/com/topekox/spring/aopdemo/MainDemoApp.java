@@ -3,6 +3,7 @@ package com.topekox.spring.aopdemo;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.topekox.spring.aopdemo.dao.AccountDAO;
+import com.topekox.spring.aopdemo.dao.MembershipDAO;
 
 public class MainDemoApp {
 
@@ -15,8 +16,14 @@ public class MainDemoApp {
 		// get the bean from spring containner
 		AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
 		
+		// get membership from spring containner
+		MembershipDAO membershipDAO = context.getBean("membershipDAO", MembershipDAO.class); 
+		
 		// call the bussines method
 		accountDAO.addAccount();
+		
+		// call the membership method
+		membershipDAO.addAccount();
 		
 		// do it again
 		System.out.println("\nlets call it again\n");
