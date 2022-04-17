@@ -8,7 +8,7 @@ public class MembershipDAO {
 
 //	@Before("execution(")
 	public void addAccount() {
-		System.out.println(getClass() + "\n===> DOING STUF: ADDING A MEMBERSHIP ACCOUNT");
+		System.out.println(getClass() + " DOING STUF: ADDING A MEMBERSHIP ACCOUNT");
 	}
 	
 }
