@@ -23,13 +23,7 @@ public class MainDemoApp {
 		accountDAO.addAccount();
 		
 		// call the membership method
-		membershipDAO.addAccount();
-		
-		// do it again
-		System.out.println("\nlets call it again\n");
-		
-		// call the bussines method aggain
-		accountDAO.addAccount();
+		membershipDAO.addUcupMember();
 		
 		// close the context
 		context.close();
