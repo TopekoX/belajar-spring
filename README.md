@@ -13,3 +13,5 @@ List:
 * Hibernate Onte-To-Many Unidirectional
 * Hibernate Many To Many
 * Spring MVC & Hibernate
+* Spring AOP
+* Spring AOP Pointcut Declaration
