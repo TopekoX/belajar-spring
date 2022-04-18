@@ -1,6 +1,5 @@
 package com.topekox.spring.aopdemo.dao;
 
-import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,6 +11,8 @@ public class MembershipDAO {
 		return true;
 	}
 	
-	
+	public void goToSleep() {
+		System.out.println(getClass() + " : I'm going to sleep now....");
+	}
 	
 }
