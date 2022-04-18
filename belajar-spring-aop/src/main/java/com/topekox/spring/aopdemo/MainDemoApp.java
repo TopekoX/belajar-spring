@@ -21,7 +21,7 @@ public class MainDemoApp {
 		
 		// call the bussines method
 		Account account = new Account();
-		accountDAO.addAccount(account);
+		accountDAO.addAccount(account, true);
 		
 		// call the membership method
 		membershipDAO.addUcupMember();
