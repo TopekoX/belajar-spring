@@ -36,7 +36,7 @@ public class MyDemoLoggingAspect {
 		System.out.println("\n=====>>> Execution @Before advice on account()");
 	}
 	
-	@Before("forDaoPackage()")
+	@Before("forDaoPackageNoGetterSetter()")
 	public void performApiAnalytics() {
 		System.out.println("\n=====>>> Perform API analytics");
 	}
