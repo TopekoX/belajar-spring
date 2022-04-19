@@ -16,3 +16,5 @@ List:
 * Spring AOP
 * Spring AOP Pointcut Declaration
 * Spring AOP Combination Pointcut
+* Spring AOP Ordering Aspect
+* Spring AOP Joinpoints
