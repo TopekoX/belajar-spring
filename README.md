@@ -18,3 +18,5 @@ List:
 * Spring AOP Combination Pointcut
 * Spring AOP Ordering Aspect
 * Spring AOP Joinpoints
+* Spring AOP AfterReturning
+* Spring AOP AfterThrowing
