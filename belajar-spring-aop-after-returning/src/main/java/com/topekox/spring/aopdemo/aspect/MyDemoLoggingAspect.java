@@ -32,9 +32,30 @@ public class MyDemoLoggingAspect {
 		
 		// print out the result of the method call
 		System.out.println("\n======>>> Result is : " + result);
+		
+		// lets modifify the data :-)
+		
+		// convert the account name to upppercase
+		convertToUpperCase(result);
+		
+		System.out.println("\n======>>> Result is : " + result);
 
 	}
 	
+	private void convertToUpperCase(List<Account> result) {
+		
+		// loop throught account
+		for(Account tempAccount : result) {
+			
+			// set uppercase the name
+			String theUpperCaseName = tempAccount.getName().toUpperCase();
+			
+			// update account
+			tempAccount.setName(theUpperCaseName);
+		}
+		
+	}
+
 	@Before("com.topekox.spring.aopdemo.aspect.TopekoxAopExpressions.forDaoPackageNoGetterSetter()")
 	public void beforeAddAccountAdvice(JoinPoint joinPoint) {
 		System.out.println("\n=====>>> Execution @Before advice on account()");
