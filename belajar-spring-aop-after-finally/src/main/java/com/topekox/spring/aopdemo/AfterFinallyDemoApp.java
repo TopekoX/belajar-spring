@@ -22,7 +22,7 @@ public class AfterFinallyDemoApp {
 		
 		try {
 			// add boolean flag to simulate exception
-			boolean tripWare = true;
+			boolean tripWare = false;
 			accounts = accountDAO.findAccounts(tripWare);
 		} catch (Exception e) {
 			System.out.println("\nMain Program... caught exception : " + e);
