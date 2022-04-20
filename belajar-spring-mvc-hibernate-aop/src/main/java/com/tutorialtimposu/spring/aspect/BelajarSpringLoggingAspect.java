@@ -3,6 +3,7 @@ package com.tutorialtimposu.spring.aspect;
 import java.util.logging.Logger;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -56,5 +57,15 @@ public class BelajarSpringLoggingAspect {
 	}
 	
 	// add @AfterReturning advice
+	@AfterReturning(pointcut = "forAppFlow()", returning = "result")
+	public void afterReturning(JoinPoint joinPoint, Object result) {
+		
+		// display method we are returning
+		String method = joinPoint.getSignature().getName();
+		logger.info("=====> in @AfterReturning: from method: " + method);
+		
+		// display data returned
+		logger.info("=====> result: " + result);
+	}
 
 }
