@@ -24,3 +24,4 @@ List:
 * Spring AOP Around
 * Spring AOP Around with Logger
 * Spring AOP Around handle Exception
+* Spring MVC & Hibernate AOP
