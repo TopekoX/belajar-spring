@@ -20,3 +20,7 @@ List:
 * Spring AOP Joinpoints
 * Spring AOP AfterReturning
 * Spring AOP AfterThrowing
+* Spring AOP After
+* Spring AOP Around
+* Spring AOP Around with Logger
+* Spring AOP Around handle Exception
