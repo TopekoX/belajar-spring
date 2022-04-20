@@ -26,7 +26,7 @@ public class MyDemoLoggingAspect {
 	Logger logger = Logger.getLogger(getClass().getName());
 	
 	// add @around
-	@Around("execution(* com.topekox.spring.aopdemo.service.TrafficFortuneService.getFortune(..))")
+	@Around("execution(* com.topekox.spring.aopdemo.service.*.getFortune(..))")
 	public Object arroundGetFortune(
 			ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		
@@ -38,7 +38,18 @@ public class MyDemoLoggingAspect {
 		long begin = System.currentTimeMillis();
 		
 		// now, let's execute the method
-		Object result = proceedingJoinPoint.proceed();
+		Object result = null;
+		
+		try {
+			result = proceedingJoinPoint.proceed();
+		} catch (Throwable e) {
+			// log the exception
+			logger.warning(e.getMessage());
+			
+			// give user a custom message
+			result = "Major accident! but no worries, "
+					+ "your private AOP helicopter is on the way";
+		}
 		
 		// get end timestamp
 		long end = System.currentTimeMillis();
@@ -143,3 +154,4 @@ public class MyDemoLoggingAspect {
 	}
 		
 }
+;
