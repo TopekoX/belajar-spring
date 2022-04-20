@@ -1,6 +1,7 @@
 package com.topekox.spring.aopdemo.aspect;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -21,6 +22,9 @@ import com.topekox.spring.aopdemo.Account;
 @Order(2)
 public class MyDemoLoggingAspect {
 	
+	// create logger
+	Logger logger = Logger.getLogger(getClass().getName());
+	
 	// add @around
 	@Around("execution(* com.topekox.spring.aopdemo.service.TrafficFortuneService.getFortune(..))")
 	public Object arroundGetFortune(
@@ -28,7 +32,7 @@ public class MyDemoLoggingAspect {
 		
 		// print which method we are advising on
 		String method = proceedingJoinPoint.getSignature().toShortString();
-		System.out.println("\n======>>> Executing @Arround on method: " + method);
+		logger.info("\n======>>> Executing @Arround on method: " + method);
 		
 		// get begin timestamp
 		long begin = System.currentTimeMillis();
@@ -41,7 +45,7 @@ public class MyDemoLoggingAspect {
 		
 		// compute duration and display it
 		long duration = end - begin;
-		System.out.println("\n=====> Duration: " + duration / 1000.0 + " seconds");
+		logger.info("\n=====> Duration: " + duration / 1000.0 + " seconds");
 				
 		return result;
 	}
@@ -51,7 +55,7 @@ public class MyDemoLoggingAspect {
 	public void afterFinallyFindAccountsAdvice(JoinPoint joinPoint) {
 		// print which method we are advising on
 		String method = joinPoint.getSignature().toShortString();
-		System.out.println("\n======>>> Executing @After (finnaly) on method: " + method);
+		logger.info("\n======>>> Executing @After (finnaly) on method: " + method);
 
 	}
 	
@@ -65,10 +69,10 @@ public class MyDemoLoggingAspect {
 		
 		// print which method we are advising on
 		String method = joinPoint.getSignature().toShortString();
-		System.out.println("\n======>>> Executing @AfterThrowing on method: " + method);
+		logger.info("\n======>>> Executing @AfterThrowing on method: " + method);
 		
 		// log the exception
-		System.out.println("\n======>>> The Exception is : " + theExcep);
+		logger.info("\n======>>> The Exception is : " + theExcep);
 	}
 	
 	// add new advice for @AfterReturning on the findAccount() method
@@ -81,18 +85,18 @@ public class MyDemoLoggingAspect {
 		
 		// print out which method we are advising on
 		String method = joinPoint.getSignature().toShortString();
-		System.out.println("\n======>>> Executing @AfterReturning on method: " + method);
+		logger.info("\n======>>> Executing @AfterReturning on method: " + method);
 		
 		
 		// print out the result of the method call
-		System.out.println("\n======>>> Result is : " + result);
+		logger.info("\n======>>> Result is : " + result);
 		
 		// lets modifify the data :-)
 		
 		// convert the account name to upppercase
 		convertToUpperCase(result);
 		
-		System.out.println("\n======>>> Result is : " + result);
+		logger.info("\n======>>> Result is : " + result);
 
 	}
 	
@@ -112,12 +116,12 @@ public class MyDemoLoggingAspect {
 
 	@Before("com.topekox.spring.aopdemo.aspect.TopekoxAopExpressions.forDaoPackageNoGetterSetter()")
 	public void beforeAddAccountAdvice(JoinPoint joinPoint) {
-		System.out.println("\n=====>>> Execution @Before advice on account()");
+		logger.info("\n=====>>> Execution @Before advice on account()");
 		
 		// display the method signature
 		MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
 		
-		System.out.println("Method: " + methodSignature);
+		logger.info("Method: " + methodSignature);
 		
 		// display method arguments
 		
@@ -125,14 +129,14 @@ public class MyDemoLoggingAspect {
 		Object[] args = joinPoint.getArgs();
 		
 		for (Object tempObj : args) {
-			System.out.println(tempObj);
+			logger.info(tempObj.toString());
 			
 			if (tempObj instanceof Account) {
 				// downcast and print Account specific stuf
 				Account account = (Account) tempObj;
 				
-				System.out.println("Account name: " + account.getName());
-				System.out.println("Account level: " + account.getLevel());
+				logger.info("Account name: " + account.getName());
+				logger.info("Account level: " + account.getLevel());
 			}
 		}
 		
