@@ -9,6 +9,6 @@
 <body>
 	<h1>Topekox Home Page</h1>
 	<hr />
-	Welcome to the Topekox Home Page
+	Welcome to the Topekox Home Page. Yohooo!!!!
 </body>
 </html>
