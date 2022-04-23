@@ -44,7 +44,7 @@
 				<div class="alert alert-success" role="alert">You have been Logout!</div>
 			</c:if>
 
-			<form:form
+			<form
 				action="${pageContext.request.contextPath}/authenticateUser"
 				method="POST" class="p-3 mt-3">
 				<div class="form-field d-flex align-items-center">
@@ -54,9 +54,15 @@
 				<div class="form-field d-flex align-items-center">
 					<span class="fas fa-key"></span> <input type="password"
 						name="password" id="pwd" placeholder="Password">
-				</div>
+				</div>				
 				<button type="submit" class="btn mt-3">Login</button>
-			</form:form>
+				
+				<!-- manually CSRF token Bro... -->
+				<input type="hidden"
+					name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+				
+			</form>
 			
 		</div>
 	</div>
