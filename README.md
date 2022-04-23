@@ -31,3 +31,4 @@ List:
 * Spring Security User Roles
 * Spring Security JDBC Plain Text
 * Spring Security JDBC Bcrypt
+* Spring Security Landing Page (example)
