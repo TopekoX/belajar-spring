@@ -19,7 +19,7 @@
         
         
         <property name="java-output-path" value="/belajar-spring-security/build/classes"/>
-        <property name="context-root" value="belajar-spring-security"/>
+        <property name="context-root" value="belajar-spring-security-user-roles"/>
                             
     
     

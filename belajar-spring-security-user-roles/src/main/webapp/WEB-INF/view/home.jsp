@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +13,12 @@
 	<h1>Topekox Home Page</h1>
 	<hr />
 	<p>Welcome to the Topekox Home Page. Yohooo!!!!</p>
+	
+	<hr />
+	<!-- display username & roles -->
+	User : <security:authentication property="principal.username"/>
+	<br /><br />
+	Roles : <security:authentication property="principal.authorities"/>
 
 	<!-- add logout -->
 	<hr />
