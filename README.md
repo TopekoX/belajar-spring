@@ -27,3 +27,4 @@ List:
 * Spring MVC & Hibernate AOP
 * Spring Security (MVC)
 * Spring Security Custom Login Form
+* Spring Security CSRF
