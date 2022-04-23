@@ -32,12 +32,16 @@
 					alt="Apex Legends">
 			</div>
 			<div class="text-center mt-4 name">Login</div>
-			
+
 			<c:if test="${param.error != null}">
 				<br />
-				<div class="alert alert-danger" role="alert">
-					Sorry!!! Username or Password Invalid!
-				</div>
+				<div class="alert alert-danger" role="alert">Sorry!!! Username
+					or Password Invalid!</div>
+			</c:if>
+
+			<c:if test="${param.logout != null}">
+				<br />
+				<div class="alert alert-success" role="alert">You have been Logout!</div>
 			</c:if>
 
 			<form:form
@@ -53,6 +57,7 @@
 				</div>
 				<button type="submit" class="btn mt-3">Login</button>
 			</form:form>
+			
 		</div>
 	</div>
 
