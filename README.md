@@ -30,3 +30,4 @@ List:
 * Spring Security CSRF
 * Spring Security User Roles
 * Spring Security JDBC Plain Text
+* Spring Security JDBC Bcrypt
