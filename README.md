@@ -29,3 +29,4 @@ List:
 * Spring Security Custom Login Form
 * Spring Security CSRF
 * Spring Security User Roles
+* Spring Security JDBC Plain Text
