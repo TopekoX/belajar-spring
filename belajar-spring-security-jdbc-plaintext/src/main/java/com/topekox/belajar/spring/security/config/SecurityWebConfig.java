@@ -1,5 +1,8 @@
 package com.topekox.belajar.spring.security.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,16 +14,17 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @Configuration
 @EnableWebSecurity
 public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
+	
+	// add a reference security data source
+	@Autowired
+	private DataSource dataSource;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	
+		// use jdbc authentication
+		auth.jdbcAuthentication().dataSource(dataSource);
 		
-		UserBuilder users = User.withDefaultPasswordEncoder();
-		
-		auth.inMemoryAuthentication()
-			.withUser(users.username("ucup").password("123456").roles("EMPLOYEE"))
-			.withUser(users.username("azwar").password("1234567").roles("EMPLOYEE", "MANAGER"))
-			.withUser(users.username("aprizal").password("12345678").roles("EMPLOYEE", "ADMIN"));
 	}
 
 	@Override
