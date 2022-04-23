@@ -28,4 +28,4 @@ List:
 * Spring Security (MVC)
 * Spring Security Custom Login Form
 * Spring Security CSRF
-* Spring Security User Roles (Taglibs)
+* Spring Security User Roles
