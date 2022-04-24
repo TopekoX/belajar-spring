@@ -14,5 +14,9 @@
 	
 	<a href="${pageContext.request.contextPath}/test/hello">Hello</a>
 	
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath}/student/list">Student List</a>
+	
 </body>
 </html>
