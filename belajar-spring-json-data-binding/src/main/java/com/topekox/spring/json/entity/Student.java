@@ -1,5 +1,8 @@
 package com.topekox.spring.json.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
 	
 	private int id;
