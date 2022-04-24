@@ -32,4 +32,4 @@ List:
 * Spring Security JDBC Plain Text
 * Spring Security JDBC Bcrypt
 * Spring Security Landing Page (example)
-* Spring JSON Data Binding
+* Spring REST JSON Data Binding
