@@ -20,14 +20,15 @@ import com.topekox.spring.rest.exception.StudentNotFoundException;
 @RestController
 @RequestMapping("/student")
 public class StudentRestController {
-	
+
 	private List<Student> students;
 
-	// definisikan @PostCustruct, untuk memanggil method load data... satu kali saja!!!
+	// definisikan @PostCustruct, untuk memanggil method load data... satu kali
+	// saja!!!
 	@PostConstruct
 	public void loadData() {
 		students = new ArrayList<>();
-		
+
 		students.add(new Student("Uzumaki", "Naruto"));
 		students.add(new Student("Uciha", "Sasuke"));
 		students.add(new Student("Hyuga", "Hinata"));
@@ -35,35 +36,51 @@ public class StudentRestController {
 
 	// Get Student List
 	@GetMapping("/list")
-	public List<Student> getListStudent() {						
+	public List<Student> getListStudent() {
 		return students;
 	}
-	
-	// Get Student by Id (nama @PathVariable harus sama dengan param di @GetMapping({...})
+
+	// Get Student by Id (nama @PathVariable harus sama dengan param di
+	// @GetMapping({...})
 	@GetMapping("/list/{studentId}")
 	public Student getStudent(@PathVariable int studentId) {
-		
+
 		// check student id
-		if(studentId > students.size() || studentId < 0) {
+		if (studentId > students.size() || studentId < 0) {
 			throw new StudentNotFoundException("Student id not found: " + studentId);
 		}
-		
+
 		return students.get(studentId);
 	}
-	
+
 	// add @ExceptionHandler -> handle exception
 	@ExceptionHandler
 	public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc) {
-		
+
 		// create a StudentErrorResponse
 		StudentErrorResponse error = new StudentErrorResponse();
-		
+
 		error.setStatus(HttpStatus.NOT_FOUND.value());
 		error.setMessage(exc.getMessage());
 		error.setTimeStamp(System.currentTimeMillis());
-		
+
 		// return ResponseEntity
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
-	
+
+	// add Generic Handler Exception - handle any Exception
+	@ExceptionHandler
+	public ResponseEntity<StudentErrorResponse> handleException(Exception exc) {
+
+		// create a StudentErrorResponse
+		StudentErrorResponse error = new StudentErrorResponse();
+
+		error.setStatus(HttpStatus.BAD_REQUEST.value());
+		error.setMessage(exc.getMessage());
+		error.setTimeStamp(System.currentTimeMillis());
+
+		// return ResponseEntity
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+	}
+
 }
