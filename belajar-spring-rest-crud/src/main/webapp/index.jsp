@@ -9,5 +9,7 @@
 <body>
 	<h3>Spring REST CRM Demo</h3>
 	<hr />
+	
+	<a href="${pageContext.request.contextPath}/api/customer">Get All Customers</a>
 </body>
 </html>
