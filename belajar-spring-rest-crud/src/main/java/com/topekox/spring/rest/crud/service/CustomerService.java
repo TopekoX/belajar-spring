@@ -12,6 +12,6 @@ public List<Customer> getListCustomers();
 	
 	public void saveCustomer(Customer customer);
 	
-	public void deleteCustomer(int id);
+	public void deleteCustomer(Customer customer);
 	
 }
