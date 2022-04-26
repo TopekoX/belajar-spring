@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.topekox.spring.rest.crud.entity.Customer;
+import com.topekox.spring.rest.crud.except.CustomerNotFoundException;
 import com.topekox.spring.rest.crud.service.CustomerService;
 
 @RestController
@@ -25,7 +26,14 @@ public class CustomerRestController {
 	
 	@GetMapping("/customer/{idCustumer}")
 	public Customer getCustomer(@PathVariable int idCustumer) {
-		return customerService.getCustomer(idCustumer);
+		
+		Customer customer = customerService.getCustomer(idCustumer);
+		
+		if (customer == null) {
+			throw new CustomerNotFoundException("Customer ID Not Found - " + idCustumer);
+		}
+		
+		return customer;
 	}
 
 }
