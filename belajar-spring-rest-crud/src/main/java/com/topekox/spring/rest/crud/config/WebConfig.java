@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -23,6 +24,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
+@ComponentScan("com.topekox.spring.rest.crud")
 @PropertySource({"classpath:config.properties"})
 public class WebConfig implements WebMvcConfigurer {
 	
@@ -44,8 +46,8 @@ public class WebConfig implements WebMvcConfigurer {
 		}
 		
 		// log url and user
-		logger.info("JDBC URL : " + env.getProperty("jdbc.url"));
-		logger.info("JDBC User : " + env.getProperty("jdbc.user"));
+		logger.info(">>> JDBC URL : " + env.getProperty("jdbc.url"));
+		logger.info(">>> JDBC User : " + env.getProperty("jdbc.user"));
 		
 		// set database pool properties
 		pooledDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
@@ -53,14 +55,10 @@ public class WebConfig implements WebMvcConfigurer {
 		pooledDataSource.setPassword(env.getProperty("jdbc.password"));
 		
 		// set connection pool properties
-		pooledDataSource.setInitialPoolSize(
-				getIntProperties(env.getProperty("connection.pool.initialPoolSize")));
-		pooledDataSource.setMinPoolSize(
-				getIntProperties(env.getProperty("connection.pool.minPoolSize")));
-		pooledDataSource.setMaxPoolSize(
-				getIntProperties(env.getProperty("connection.pool.maxPoolSize")));
-		pooledDataSource.setMaxIdleTime(
-				getIntProperties(env.getProperty("connection.pool.maxIdleTime")));
+		pooledDataSource.setInitialPoolSize(getIntProperties("connection.pool.initialPoolSize"));
+		pooledDataSource.setMinPoolSize(getIntProperties("connection.pool.minPoolSize"));
+		pooledDataSource.setMaxPoolSize(getIntProperties("connection.pool.maxPoolSize"));
+		pooledDataSource.setMaxIdleTime(getIntProperties("connection.pool.maxIdleTime"));
 		
 		return pooledDataSource;
 	}
