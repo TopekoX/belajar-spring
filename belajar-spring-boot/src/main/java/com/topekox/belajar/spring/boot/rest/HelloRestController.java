@@ -13,4 +13,9 @@ public class HelloRestController {
 		return "Hello World!!! Time server is = " + LocalDateTime.now();
 	}
 	
+	@GetMapping("/message")
+	public String sayMessage() {
+		return "You are so handsome :-D";
+	}
+	
 }
