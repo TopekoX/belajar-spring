@@ -39,4 +39,5 @@ List of Roadmap:
 * Spring Boot Dev Tools
 * Spring Boot Command Line
 * Spring Boot Properties
-* Spring Boot REST CRUD
+* Spring Boot REST CRUD with Hibernate
+* Spring Boot REST CRUD with JPA
