@@ -41,3 +41,5 @@ List of Roadmap:
 * Spring Boot Properties
 * Spring Boot REST CRUD with Hibernate
 * Spring Boot REST CRUD with JPA
+* Spring Boot Data JPA
+* Spring Boot Data REST
