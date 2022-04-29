@@ -3,6 +3,7 @@ package com.topekox.belajar.spring.boot.rest.crud.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +16,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeDAO employeeDAO;
 
 	@Autowired
-	public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
+	// menggunakan @Qualifier spesifik merujuk ke employeeDaoJpaImpl
+	public EmployeeServiceImpl(@Qualifier("employeeDAOJpaImpl") EmployeeDAO employeeDAO) {
 		this.employeeDAO = employeeDAO;
 	}
 
