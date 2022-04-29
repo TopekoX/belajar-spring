@@ -43,3 +43,4 @@ List of Roadmap:
 * Spring Boot REST CRUD with JPA
 * Spring Boot Data JPA
 * Spring Boot Data REST
+* Spring Boot Thymeleaf
