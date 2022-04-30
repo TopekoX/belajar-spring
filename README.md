@@ -45,3 +45,5 @@ List of Roadmap:
 * Spring Boot Data REST
 * Spring Boot Thymeleaf
 * Spring Boot Thymeleaf List Example
+* Spring Boot Thymeleaf List Bootstrap CSS
+
